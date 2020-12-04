@@ -16,6 +16,7 @@ const ContactForm = () => {
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
+          id='firstName'
             name="firstName"
             placeholder="Edd"
             ref={register({ required: true, maxLength: 3 })}
@@ -28,7 +29,7 @@ const ContactForm = () => {
         <div>
           <label htmlFor="lastName">Last Name*</label>
           <input
-            id="lastName"
+            id='lastName'
             name="lastName"
             placeholder="Burke"
             ref={register({ required: true })}
@@ -42,8 +43,7 @@ const ContactForm = () => {
           <label htmlFor="email">
             Email*
           </label>
-          <input name="email" 
-            id="lastName"
+          <input id='email' name="email" 
             placeholder="bluebill1049@hotmail.com"
             ref={register({ required: true })} 
           />
@@ -60,11 +60,11 @@ const ContactForm = () => {
           />
         </div>
         {data && (
-          <pre style={{ textAlign: "left", color: "white" }}>
+          <pre data-testid='formData' style={{ textAlign: "left", color: "white" }}>
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        <input type="submit" />
+        <button name='submit' id='submit ' type="submit">submit</button> 
       </form>
     </div>
   );
